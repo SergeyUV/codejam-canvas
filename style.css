@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.541327);
+          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.541327);
+}
+
+.header_nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header_nav-leftdrop {
+  margin: 0 8px 8px 8px;
+}
+
+.header_nav-leftdrop:hover {
+  cursor: pointer;
+}
+
+.header_nav-header {
+  -ms-flex-preferred-size: 95%;
+      flex-basis: 95%;
+}
+
+.header_nav-rightdrop {
+  margin: 0 8px 8px 8px;
+}
+
+.header_nav-rightdrop:hover {
+  cursor: pointer;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5vh;
+}
+
+.main_left_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.main_left_nav-tools {
+  list-style: none;
+  line-height: 5vh;
+  width: 20vw;
+  margin-left: 2vw;
+  color: rgba(0, 0, 0, 0.541327);
+  border: 1px solid rgba(0, 0, 0, 0.541327);
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.541327);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.541327);
+}
+
+.main_left_nav-tools li {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.main_left_nav-tools li:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.541327);
+}
+
+.main_left_nav-tools li:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
