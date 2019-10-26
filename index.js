@@ -16,13 +16,13 @@ function navChooseImgEvent(event){
     console.log(this.id);
 }
 
- for ( let i = 0; i < document.getElementById('nav-choose_img').getElementsByTagName('li').length; i++){
-     document.getElementById('nav-choose_img').getElementsByTagName('li').item(i).addEventListener('click', navChooseImgEvent);
+ for ( let i = 0; i < document.getElementById('nav-choice_img').getElementsByTagName('li').length; i++){
+     document.getElementById('nav-choice_img').getElementsByTagName('li').item(i).addEventListener('click', navChooseImgEvent);
  };
 
 function clearMenuBack(){
     
-    for ( let i = 0; i < document.getElementById('nav-choose_img').getElementsByTagName('li').length; i++){
-        document.getElementById('nav-choose_img').getElementsByTagName('li').item(i).classList.remove('nav_gray_back');
+    for ( let i = 0; i < document.getElementById('nav-choice_img').getElementsByTagName('li').length; i++){
+        document.getElementById('nav-choice_img').getElementsByTagName('li').item(i).classList.remove('nav_gray_back');
     };
 }
