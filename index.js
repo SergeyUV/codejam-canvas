@@ -3,15 +3,19 @@ function navChooseImgEvent(event){
     
     clearMenuBack();
     this.classList.add('nav_gray_back');
-
+    let myCanvasDrawer = {};
     switch (this.id){
         case 'set_4x4':
-            const myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 4, 4, 'data/4x4.json');
+            myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 4, 4, 'data/4x4.json');
             myCanvasDrawer.doDraw();
             break;
         case 'set_32x32':
+            myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 32, 32, 'data/32x32.json');
+            myCanvasDrawer.doDraw();
             break;
         case 'set_png':
+            myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 32, 32, 'data/image.png');
+            myCanvasDrawer.doDrawPNG();
             break;
     }
 }
@@ -31,14 +35,20 @@ function CanvasDrawer(canvasElement, datasizeX, datasizeY, dataPath) {
     this.datasizeY = datasizeY;
     this.ctx = undefined;
     this.dataPath = dataPath;
+    
    
     if(canvasElement.getContext){
         this.ctx = canvasElement.getContext('2d');
+        this.canvaswidth = canvasElement.width;
+        this.canvasheight = canvasElement.height;
     }
 
     this.doDraw = function() {
-        const deltaX = 256 / datasizeX;
-        const deltaY = 256 / datasizeY;
+        
+        if(!canvasElement.getContext){return;};
+
+        const deltaX = this.canvaswidth / datasizeX;
+        const deltaY = this.canvasheight / datasizeY;
         
         fetch(this.dataPath)
         .then(response => response.json())
@@ -48,6 +58,11 @@ function CanvasDrawer(canvasElement, datasizeX, datasizeY, dataPath) {
             
             if(this.dataPath == 'data/4x4.json'){
                 makecolor = function(d){ return '#' + d; };
+            }else if(this.dataPath == 'data/32x32.json'){
+                makecolor = function(d){ 
+                 let [r,g,b,a] = d;
+                    return `rgba(${r}, ${g}, ${b}, ${a})`; 
+                };
             }
 
             let rectY = 0;
@@ -60,6 +75,18 @@ function CanvasDrawer(canvasElement, datasizeX, datasizeY, dataPath) {
             }
         });
     }
+
+    this.doDrawPNG = function(){
+        if(!canvasElement.getContext){return;};
+        
+        const img = new Image(this.canvaswidth, this.canvasheight);
+        img.onload = ()=>{
+            this.ctx.drawImage(img, 0, 0);
+        }//drawImageActualSize;
+        img.src = 'data/image.png';
+
+    }
+
     
 };
 
