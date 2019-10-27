@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>codejam-canvas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header class="page_header">
+    <nav class="header_nav">
+      <div class="header_nav-leftdrop">
+        <img class="header_nav-leftdrop-img" src="assets/left-menu-icon.png" alt="menu1" width="24" height="24">
+      </div>
+      <div class="header_nav-header">
+          <h2>CodeJam - Pallete</h2>
+      </div>
+      <div class="header_nav-rightdrop">
+          <img class="header_nav-rightdrop-img" src="assets/right-menu-icon.png" alt="menu2" width="12" height="24">
+      </div>
+    </nav>
+  </header>
+  <main class="page_main">
+    <nav class = "main_left_nav">
+      <ul class="main_left_nav-tools">
+        <li>
+            <img src="assets/icon-paint.png" alt="paint" width="24" height="24">
+            <span>Paint bucket</span>
+        </li>
+        <li>
+            <img src="assets/icon-choosecolor.png" alt="paint" width="24" height="24">
+            <span>Choose color</span>
+        </li>
+        <li>
+            <img src="assets/icon-move.png" alt="paint" width="24" height="24">
+            <span>Move</span>
+        </li>
+        <li>
+            <img src="assets/icon-transform.png" alt="paint" width="24" height="24">
+            <span>Transform</span>
+        </li>
+      </ul>
+
+      <ul class="main_left_nav-colors">
+          <li>
+              <div class="main_left_nav-colors-colorcircle"></div>
+              <span>Current color</span>
+          </li>
+          <li>
+              <div class="main_left_nav-colors-colorcircle"></div>
+              <span>Prev color</span>
+          </li>
+          <li>
+              <div class="main_left_nav-colors-colorcircle"></div>
+              <span>red</span>
+          </li>
+          <li>
+              <div class="main_left_nav-colors-colorcircle"></div>
+              <span>blue</span>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="main_canvas_wrapper">
+      <canvas id="main_canvas" class="main_canvas" width="256" height="256">canvas not supported</canvas>
+    </div>
+    <nav class = "main_right_nav">
+      <ul id="nav-choice_img" class="main_right_nav-choice_img">
+        <li id="set_4x4">
+            <div class="main_right_nav-choice_img-square"></div>
+            <span>4x4</span>
+        </li>
+        <li id="set_32x32">
+            <div class="main_right_nav-choice_img-square"></div>
+            <span>32x32</span>
+        </li>
+        <li id="set_png">
+            <div class="main_right_nav-choice_img-square"></div>
+            <span>PNG</span>
+        </li>
+      </ul>
+    </nav>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
