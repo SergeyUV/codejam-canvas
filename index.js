@@ -7,11 +7,11 @@ function navChooseImgEvent(event){
     switch (this.id){
         case 'set_4x4':
             myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 4, 4, 'data/4x4.json');
-            myCanvasDrawer.doDraw();
+            myCanvasDrawer.doDrawJSON();
             break;
         case 'set_32x32':
             myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 32, 32, 'data/32x32.json');
-            myCanvasDrawer.doDraw();
+            myCanvasDrawer.doDrawJSON();
             break;
         case 'set_png':
             myCanvasDrawer = new CanvasDrawer(document.getElementById('main_canvas'), 32, 32, 'data/image.png');
@@ -43,7 +43,7 @@ function CanvasDrawer(canvasElement, datasizeX, datasizeY, dataPath) {
         this.canvasheight = canvasElement.height;
     }
 
-    this.doDraw = function() {
+    this.doDrawJSON = function() {
         
         if(!canvasElement.getContext){return;};
 
@@ -82,7 +82,7 @@ function CanvasDrawer(canvasElement, datasizeX, datasizeY, dataPath) {
         const img = new Image(this.canvaswidth, this.canvasheight);
         img.onload = ()=>{
             this.ctx.drawImage(img, 0, 0);
-        }//drawImageActualSize;
+        }
         img.src = 'data/image.png';
 
     }
